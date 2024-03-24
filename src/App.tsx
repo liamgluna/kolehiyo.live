@@ -1,7 +1,4 @@
-import { useState } from "react";
 import "./App.css";
-import SchoolCards from "./components/UniversityCards";
-import Navbar from "./components/Navbar";
 import {
   Route,
   RouterProvider,
@@ -13,15 +10,24 @@ import MainLayout from "./layouts/MainLayout";
 import About from "./pages/About";
 import Explore from "./pages/Explore";
 import NotFound from "./pages/NotFound";
-import University from "./pages/University";
+import University, { UniversityLoader } from "./pages/University";
+import { UniversitiesLoader } from "./components/UniversityCards";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/explore" element={<Explore />} />
-      <Route path="/universities/:id" element={<University />} />
+      <Route
+        path="/explore"
+        element={<Explore />}
+        loader={UniversitiesLoader}
+      />
+      <Route
+        path="/universities/:id"
+        element={<University />}
+        loader={UniversityLoader}
+      />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
