@@ -30,6 +30,6 @@ export default {
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
 ## Deployment
-pm2 list all
-pm2 delete all
+pm2 list all  
+pm2 delete all  
 pm2 serve dist 3000 --spa
