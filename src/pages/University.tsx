@@ -1,5 +1,4 @@
 import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
-;
 // import Spinner from "../components/Spinner";
 
 interface University {
@@ -53,7 +52,7 @@ const University = () => {
               alt="iskol"
             />
           </figure>
-          <div className="card-body items-center text-center">
+          <div className="card-body items-center">
             <h2 className="card-title text-xl font-bold">{university?.name}</h2>
             <p>Founded: {university.founded}</p>
             <p>Location: {university.location}</p>
@@ -74,8 +73,8 @@ const University = () => {
 
 const UniversityLoader = async ({ params }: LoaderFunctionArgs) => {
   const response = await fetch(
-    `https://api.kolehiyo.live/v0/universities/${params.id}`
-    // `http://localhost:4000/v0/universities/${params.id}`
+    // `https://api.kolehiyo.live/v0/universities/${params.id}`
+    `http://localhost:4000/v0/universities/${params.id}`
   );
   const data: Payload = await response.json();
   console.log(data.university);

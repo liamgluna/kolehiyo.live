@@ -1,7 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 // import { toast } from "react-toastify";
 
-
 interface University {
   id: number;
   name: string;
@@ -25,8 +24,8 @@ interface UniversityData {
 }
 
 const UniversitiesLoader = async () => {
-  const response = await fetch("https://api.kolehiyo.live/v0/universities");
-  // const response = await fetch("http://localhost:4000/v0/universities");
+  // const response = await fetch("https://api.kolehiyo.live/v0/universities");
+  const response = await fetch("http://localhost:4000/v0/universities");
 
   const data: UniversityData = await response.json();
   return data.universities;
@@ -34,7 +33,6 @@ const UniversitiesLoader = async () => {
 
 const UniversityCards = () => {
   const universities = useLoaderData() as University[];
-
 
   // const onClick = () => {
   //   toast.info("You clicked the button!");
