@@ -11,8 +11,7 @@ const MainLayout = () => {
       <Navbar />
 
       {navigation.state === "loading" && <Spinner loading={true} />}
-      {/* {navigation.state === "loading" && toast.info("Loading...")} */}
-      <Outlet />
+      {navigation.state !== "loading" && <Outlet />}
       <ToastContainer />
     </>
   );

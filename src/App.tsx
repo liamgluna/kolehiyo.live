@@ -11,7 +11,7 @@ import About from "./pages/About";
 import Explore from "./pages/Explore";
 import NotFound from "./pages/NotFound";
 import University, { UniversityLoader } from "./pages/University";
-import { UniversitiesLoader } from "./components/UniversityCards";
+import { UniversitiesLoader } from "./pages/Explore";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

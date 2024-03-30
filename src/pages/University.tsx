@@ -1,5 +1,4 @@
 import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
-// import Spinner from "../components/Spinner";
 
 interface University {
   id: number;
@@ -7,6 +6,7 @@ interface University {
   founded: string;
   location: string;
   website: string;
+  img_url: string;
   version: number;
 }
 
@@ -15,30 +15,7 @@ interface Payload {
 }
 
 const University = () => {
-  // const { id } = useParams<{ id: string }>();
   const university = useLoaderData() as University;
-
-  // const [university, setUniversity] = useState<University>();
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(false);
-
-  // useEffect(() => {
-  //   const fetchUniversity = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `http://localhost:4000/api/v0/universities/${id}`
-  //       );
-  //       const data: Payload = await response.json();
-  //       console.log(data.university);
-  //       setUniversity(data.university);
-  //     } catch (error) {
-  //       setError(true);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fetchUniversity();
-  // }, []);
 
   return (
     <>
@@ -47,10 +24,7 @@ const University = () => {
       {university && (
         <>
           <figure>
-            <img
-              src="https://www.dlsu.edu.ph/wp-content/uploads/2017/12/1DLSU-at-duskE.jpg"
-              alt="iskol"
-            />
+            <img src={university.img_url} alt="iskol" />
           </figure>
           <div className="card-body items-center">
             <h2 className="card-title text-xl font-bold">{university?.name}</h2>
@@ -73,8 +47,8 @@ const University = () => {
 
 const UniversityLoader = async ({ params }: LoaderFunctionArgs) => {
   const response = await fetch(
-    // `https://api.kolehiyo.live/v0/universities/${params.id}`
-    `http://localhost:4000/v0/universities/${params.id}`
+    `https://api.kolehiyo.live/v0/universities/${params.id}`
+    // `http://localhost:4000/v0/universities/${params.id}`
   );
   const data: Payload = await response.json();
   console.log(data.university);

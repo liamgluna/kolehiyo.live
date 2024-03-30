@@ -6,10 +6,6 @@ const Navbar = () => {
       ? "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-base-300 btn-ghost rounded-md font-semibold"
       : "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-ghost rounded-md font-semibold";
 
-  const linkClassHome = ({ isActive }: { isActive: boolean }) =>
-    isActive
-      ? "btn btn-md sm:btn-md md:btn-md lg:btn-lg btn-ghost rounded-md font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-3xl"
-      : "btn btn-md sm:btn-md md:btn-md lg:btn-lg btn-ghost rounded-md font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-3xl";
   return (
     <>
       <div className="navbar bg-base-100">
@@ -49,25 +45,13 @@ const Navbar = () => {
               </NavLink>
             </ul>
           </div>
-          {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
-          <NavLink className={linkClassHome} to="/">
+          <NavLink
+            className="btn btn-md sm:btn-md md:btn-md lg:btn-lg btn-ghost rounded-md font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-3xl"
+            to="/"
+          >
             🎓Kolehiyo
           </NavLink>
         </div>
-        {/* <div className="navbar-end">
-          <NavLink className={linkClass} to="/explore">
-            Explore
-          </NavLink>
-          <NavLink className={linkClass} to="/top">
-            Top Schools
-          </NavLink>
-          <NavLink className={linkClass} to="/search">
-            Search
-          </NavLink>
-          <NavLink className={linkClass} to="/about">
-            About
-          </NavLink>
-        </div> */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <NavLink className={linkClass} to="/explore">
@@ -91,7 +75,7 @@ const Navbar = () => {
 
             {/* sun icon */}
             <svg
-              className="swap-off fill-current w-10 h-10"
+              className="swap-off fill-current w-9 h-9 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-10 lg:h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -100,7 +84,7 @@ const Navbar = () => {
 
             {/* moon icon */}
             <svg
-              className="swap-on fill-current w-10 h-10"
+              className="swap-on fill-current w-9 h-9 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-10 lg:h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
